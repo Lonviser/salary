@@ -28,8 +28,9 @@ namespace WinFormsApp1
             double pensionFund = double.Parse(textBox6.Text);
             double unionDues = double.Parse(textBox7.Text);
             double[] calculatedSalary = { salary, numberOfChildren, standardTaxDeduction, standardTaxDeductionCount, incomeTaxPercent, numberOfOldChildren, taxDeduction, lnor1, lnor2, creditPayment, pensionFund, unionDues }; 
+
             SalaryCalculator calculator = new SalaryCalculator(calculatedSalary);
-            MessageBox.Show($"Размер начисленной зарплаты: {calculator.CalculateSalary()}");
+            textBox4.Text = Convert.ToString(calculator.CalculateSalary(textBox11, textBox12)); 
         }
 
         public class SalaryCalculator
@@ -69,7 +70,7 @@ namespace WinFormsApp1
                 unionDues = initialValues[11];
             }
 
-            public double CalculateSalary()
+            public double CalculateSalary(TextBox expelledTextBox, TextBox incomeTaxTextBox)
             {
                 double incomeTax; // итоговый подоходный налог (значение)
                 double expelled; //отчислено
@@ -89,6 +90,9 @@ namespace WinFormsApp1
 
                 expelled = incomeTax + salary * (pensionFund /100) + salary * (unionDues/100);
                 accrued = salary - expelled;
+
+                expelledTextBox.Text = Convert.ToString(expelled);
+                incomeTaxTextBox.Text = Convert.ToString(incomeTax);
 
                 return accrued;
             }
