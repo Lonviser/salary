@@ -57,6 +57,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -90,6 +92,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(214, 27);
             this.textBox2.TabIndex = 3;
+            this.textBox2.Text = "0";
             // 
             // label3
             // 
@@ -106,13 +109,14 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(214, 27);
             this.textBox3.TabIndex = 5;
+            this.textBox3.Text = "0";
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(48, 408);
+            this.button1.Location = new System.Drawing.Point(48, 415);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(214, 71);
+            this.button1.Size = new System.Drawing.Size(214, 148);
             this.button1.TabIndex = 6;
             this.button1.Text = "Расчитать";
             this.button1.UseVisualStyleBackColor = true;
@@ -120,16 +124,17 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(589, 452);
+            this.textBox4.Location = new System.Drawing.Point(587, 506);
+            this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(214, 27);
+            this.textBox4.Size = new System.Drawing.Size(216, 53);
             this.textBox4.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(589, 417);
+            this.label4.Location = new System.Drawing.Point(356, 516);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 28);
             this.label4.TabIndex = 8;
@@ -235,28 +240,29 @@
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(214, 27);
             this.textBox10.TabIndex = 20;
-            this.textBox10.Text = "1";
+            this.textBox10.Text = "46";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(589, 334);
+            this.label11.Location = new System.Drawing.Point(587, 415);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(146, 20);
+            this.label11.Size = new System.Drawing.Size(199, 20);
             this.label11.TabIndex = 21;
-            this.label11.Text = "Подоходный налог:";
+            this.label11.Text = "Подоходный налог (итого):";
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(320, 452);
+            this.textBox11.Location = new System.Drawing.Point(320, 450);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(214, 27);
             this.textBox11.TabIndex = 22;
+            this.textBox11.Text = "0";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(320, 417);
+            this.label12.Location = new System.Drawing.Point(320, 415);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(87, 20);
             this.label12.TabIndex = 23;
@@ -264,10 +270,11 @@
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(589, 369);
+            this.textBox12.Location = new System.Drawing.Point(587, 450);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(214, 27);
             this.textBox12.TabIndex = 24;
+            this.textBox12.Text = "0";
             // 
             // textBox13
             // 
@@ -303,11 +310,30 @@
             this.textBox14.TabIndex = 28;
             this.textBox14.Text = "944 ";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(589, 334);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(144, 20);
+            this.label15.TabIndex = 29;
+            this.label15.Text = "Кредитный платёж:";
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(589, 360);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(214, 27);
+            this.textBox15.TabIndex = 30;
+            this.textBox15.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 535);
+            this.ClientSize = new System.Drawing.Size(933, 585);
+            this.Controls.Add(this.textBox15);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.textBox14);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.textBox13);
@@ -339,6 +365,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Калькулятор заработной платы";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,5 +402,7 @@
         private Label label13;
         private Label label14;
         private TextBox textBox14;
+        private Label label15;
+        private TextBox textBox15;
     }
 }

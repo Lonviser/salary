@@ -7,7 +7,6 @@ namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
-        private SalaryCalculator salaryCalculator;
 
         public Form1()
         {
@@ -18,9 +17,17 @@ namespace WinFormsApp1
         {
             double salary = double.Parse(textBox1.Text);
             double numberOfChildren = double.Parse(textBox2.Text);
-            double standardTaxDeduction = double.Parse(textBox3.Text);
-
-            double[] calculatedSalary = { salary, numberOfChildren, 10000, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; 
+            double standardTaxDeduction = double.Parse(textBox14.Text);
+            double standardTaxDeductionCount = double.Parse(textBox13.Text);
+            double incomeTaxPercent = double.Parse(textBox5.Text);
+            double numberOfOldChildren = double.Parse(textBox3.Text);
+            double taxDeduction = double.Parse(textBox10.Text);
+            double lnor1 = double.Parse(textBox8.Text);
+            double lnor2 = double.Parse(textBox9.Text);
+            double creditPayment = double.Parse(textBox15.Text);
+            double pensionFund = double.Parse(textBox6.Text);
+            double unionDues = double.Parse(textBox7.Text);
+            double[] calculatedSalary = { salary, numberOfChildren, standardTaxDeduction, standardTaxDeductionCount, incomeTaxPercent, numberOfOldChildren, taxDeduction, lnor1, lnor2, creditPayment, pensionFund, unionDues }; 
             SalaryCalculator calculator = new SalaryCalculator(calculatedSalary);
             MessageBox.Show($"Размер начисленной зарплаты: {calculator.CalculateSalary()}");
         }
@@ -32,61 +39,64 @@ namespace WinFormsApp1
             private double numberOfChildren; //Количество детей 
             private double standardTaxDeduction; // стандартный налоговый вычет (до какой суммы)
             private double standardTaxDeductionCount;// стандартный налоговый вычет (его значение)
-            private double incomeTax; // Подоходный налог
             private double incomeTaxPercent; // Подоходный налог
-            private double expelled; //отчислено
             private double numberOfOldChildren; //Количество детей cтарше 18 получающих образование
             private double taxDeduction; // налоговый вычет 
             private double lnor1; // льгота на одного ребёнка
             private double lnor2; // льгота на одного ребёнка от 2 детей
             private double creditPayment; // Кредитный платёж
-            private double tuitionAmount; //сумма обучения
             private double pensionFund;// Пенсионный фонд
             private double unionDues; //профсоюзные взносы
 
             public SalaryCalculator(double[] initialValues)
             {
-                if (initialValues.Length != 15) 
+                if (initialValues.Length != 12) 
                 {
-                    throw new ArgumentException("Array length should be 15.", nameof(initialValues));
+                    throw new ArgumentException("Array length should be 11.", nameof(initialValues));
                 }
 
                 salary = initialValues[0];
                 numberOfChildren = initialValues[1];
                 standardTaxDeduction = initialValues[2];
                 standardTaxDeductionCount = initialValues[3];
-                incomeTax = initialValues[4];
-                incomeTaxPercent = initialValues[5];
-                expelled = initialValues[6];
-                numberOfOldChildren = initialValues[7];
-                taxDeduction = initialValues[8];
-                lnor1 = initialValues[9];
-                lnor2 = initialValues[10];
-                creditPayment = initialValues[11];
-                tuitionAmount = initialValues[12];
-                pensionFund = initialValues[13];
-                unionDues = initialValues[14];
+                incomeTaxPercent = initialValues[4];
+                numberOfOldChildren = initialValues[5];
+                taxDeduction = initialValues[6];
+                lnor1 = initialValues[7];
+                lnor2 = initialValues[8];
+                creditPayment = initialValues[9];
+                pensionFund = initialValues[10];
+                unionDues = initialValues[11];
             }
 
             public double CalculateSalary()
             {
+                double incomeTax; // итоговый подоходный налог (значение)
+                double expelled; //отчислено
+                double tuitionAmount = taxDeduction * numberOfOldChildren;//сумма обучения
+
                 // Вычисления зарплаты и налогов
                 if (salary < standardTaxDeduction)
                 {
                     double lnor = (numberOfChildren > 1) ? lnor2 : lnor1;
-                    incomeTax = (salary - standardTaxDeductionCount - taxDeduction * numberOfOldChildren - lnor * numberOfChildren - creditPayment - tuitionAmount) * incomeTaxPercent / 100;
+                    incomeTax = (salary - standardTaxDeductionCount - tuitionAmount - lnor * numberOfChildren - creditPayment ) * incomeTaxPercent / 100;
                 }
                 else
                 {
                     double lnor = (numberOfChildren > 1) ? lnor2 : lnor1;
-                    incomeTax = (salary - taxDeduction * numberOfOldChildren - lnor * numberOfChildren - creditPayment - tuitionAmount) * incomeTaxPercent / 100;
+                    incomeTax = (salary - tuitionAmount - lnor * numberOfChildren - creditPayment ) * incomeTaxPercent / 100;
                 }
 
-                expelled = incomeTax + salary * pensionFund + salary * unionDues;
+                expelled = incomeTax + salary * (pensionFund /100) + salary * (unionDues/100);
                 accrued = salary - expelled;
 
                 return accrued;
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
