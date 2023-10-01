@@ -55,6 +55,8 @@
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox14 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -100,16 +102,17 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(48, 284);
+            this.textBox3.Location = new System.Drawing.Point(48, 268);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(214, 27);
             this.textBox3.TabIndex = 5;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(48, 343);
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(48, 408);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(214, 151);
+            this.button1.Size = new System.Drawing.Size(214, 71);
             this.button1.TabIndex = 6;
             this.button1.Text = "Расчитать";
             this.button1.UseVisualStyleBackColor = true;
@@ -117,7 +120,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(589, 467);
+            this.textBox4.Location = new System.Drawing.Point(589, 452);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(214, 27);
             this.textBox4.TabIndex = 7;
@@ -125,9 +128,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(589, 433);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(589, 417);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 20);
+            this.label4.Size = new System.Drawing.Size(110, 28);
             this.label4.TabIndex = 8;
             this.label4.Text = "К выдаче:";
             // 
@@ -176,7 +180,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(320, 284);
+            this.textBox7.Location = new System.Drawing.Point(320, 268);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(214, 27);
             this.textBox7.TabIndex = 14;
@@ -219,7 +223,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(589, 231);
+            this.label10.Location = new System.Drawing.Point(589, 211);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(276, 40);
             this.label10.TabIndex = 19;
@@ -227,7 +231,7 @@
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(589, 284);
+            this.textBox10.Location = new System.Drawing.Point(589, 268);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(214, 27);
             this.textBox10.TabIndex = 20;
@@ -236,7 +240,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(589, 349);
+            this.label11.Location = new System.Drawing.Point(589, 334);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(146, 20);
             this.label11.TabIndex = 21;
@@ -244,7 +248,7 @@
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(320, 467);
+            this.textBox11.Location = new System.Drawing.Point(320, 452);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(214, 27);
             this.textBox11.TabIndex = 22;
@@ -252,7 +256,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(320, 432);
+            this.label12.Location = new System.Drawing.Point(320, 417);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(87, 20);
             this.label12.TabIndex = 23;
@@ -260,32 +264,52 @@
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(589, 384);
+            this.textBox12.Location = new System.Drawing.Point(589, 369);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(214, 27);
             this.textBox12.TabIndex = 24;
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(320, 384);
+            this.textBox13.Location = new System.Drawing.Point(320, 369);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(214, 27);
             this.textBox13.TabIndex = 26;
+            this.textBox13.Text = "156 ";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(320, 349);
+            this.label13.Location = new System.Drawing.Point(320, 314);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(230, 20);
+            this.label13.Size = new System.Drawing.Size(227, 40);
             this.label13.TabIndex = 25;
-            this.label13.Text = "Стандартный налоговый вычет:";
+            this.label13.Text = "Стандартный налоговый вычет\r\n(значение):";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(48, 314);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(227, 40);
+            this.label14.TabIndex = 27;
+            this.label14.Text = "Стандартный налоговый вычет\r\n (От какой суммы):";
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(48, 369);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(214, 27);
+            this.textBox14.TabIndex = 28;
+            this.textBox14.Text = "944 ";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 548);
+            this.ClientSize = new System.Drawing.Size(897, 535);
+            this.Controls.Add(this.textBox14);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.textBox13);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBox12);
@@ -314,7 +338,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Калькулятор заработной платы";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,5 +373,7 @@
         private TextBox textBox12;
         private TextBox textBox13;
         private Label label13;
+        private Label label14;
+        private TextBox textBox14;
     }
 }

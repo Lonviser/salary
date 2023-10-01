@@ -74,7 +74,7 @@ namespace WinFormsApp1
                 if (salary < standardTaxDeduction)
                 {
                     double lnor = (numberOfChildren > 1) ? lnor2 : lnor1;
-                    incomeTax = (salary - standardTaxDeduction - taxDeduction * numberOfOldChildren - lnor * numberOfChildren - creditPayment - tuitionAmount) * incomeTaxPercent / 100;
+                    incomeTax = (salary - standardTaxDeductionCount - taxDeduction * numberOfOldChildren - lnor * numberOfChildren - creditPayment - tuitionAmount) * incomeTaxPercent / 100;
                 }
                 else
                 {
